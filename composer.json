@@ -3,13 +3,13 @@
     "description": "hexlet php-package",
     "license": "MIT",
     "autoload": {
-              "psr-4": {
+            "psr-4": {
             "Hexlet\\Code\\": "src/"
         },
-        "files": [
-            "src/Cli.php"
-            
-        ]
+         "files": [
+           "src/Cli.php"
+                      
+         ]
     },
     "authors": [
         {
