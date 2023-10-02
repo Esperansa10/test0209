@@ -15,7 +15,9 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
- 
-BrainGames\Cli\greet();
-$name = '';
+
+line('Welcome to the Brain Game!');
+$name = prompt('May I have your name?');
+line("Hello, %s!", $name);
+
 BrainGames\Even\even($name); 
