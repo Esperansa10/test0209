@@ -13,9 +13,6 @@ function calc($name)
    line('Hello, Sam!');
    line('What is the result of the expression?');
     
-   
-
-
     for($i = 1; $i <= 3; $i++) {
 
     $result = '';
@@ -48,12 +45,9 @@ function calc($name)
         else {
             return line($answer . " is wrong answer ;(. Correct answer was " . $result); 
             line("Let's try again, " . $name ." !");
-          
-
         }
-        
+
     }
     line("Congratulations, " . $name . "!");
 } 
 
- 
