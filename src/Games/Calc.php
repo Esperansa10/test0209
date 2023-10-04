@@ -3,15 +3,18 @@
 namespace BrainGames\Even;
 
 use BrainGames\Cli;
+use BrainGames\Engine;
 use function cli\greet;
 use function cli\line;
 use function cli\prompt;
+use function Engine\engine; 
 
  
 function calc($name)
 {
-   line('Hello, Sam!');
-   line('What is the result of the expression?');
+
+    $username = $name; 
+      line('What is the result of the expression?');
     
     for($i = 1; $i <= 3; $i++) {
 
@@ -23,7 +26,7 @@ function calc($name)
 
     line('Question: '. $random1 . ' ' . $operator . ' ' . $random2); 
     $answer = prompt('Your answer');
-    $answerint = intval($answer); 
+    $answer = intval($answer); 
         
         //считаем result 
         if ($operator === '+'){
@@ -38,15 +41,11 @@ function calc($name)
         // закончили считать result
         
         //сравниваем result и answer   
-        if ($result === $answerint) {
-        line("Correct!");  
+        if ($answer === $result) {
+            Engine\engine($answer, $result,  $username);      
         }
-             
-        else {
-            return line($answer . " is wrong answer ;(. Correct answer was " . $result); 
-            line("Let's try again, " . $name ." !");
-        }
-
+        else return Engine\engine($answer, $result,  $username);             
+        
     }
     line("Congratulations, " . $name . "!");
 } 
