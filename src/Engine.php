@@ -5,7 +5,8 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function engine($answer, $result,  $username) {
+function engine($answer, $result, $username) {
+
     if($answer === $result) {
     return line("Correct");
     }
