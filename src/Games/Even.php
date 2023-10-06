@@ -12,52 +12,46 @@ use function Engine\engine;
  
 function even($name)
 {
-   line('Answer "yes" if the number is even, otherwise answer "no".');
+   
    $random = '';
-   $result = ''; 
-   $username = $name; 
-    for($i = 1; $i <= 3; $i++) {
-
-        line($random = rand(1, 10)); 
+   $username = $name;     
+    line($random = rand(1, 10)); 
         $answer = prompt('Your answer');
         
         if ($random % 2 === 1 && $answer === 'yes') {
-            $result = 'no'; 
-            $answer = 'yes'; 
-            return Engine\engine($answer, $result,  $username);             
+          $result = 'no';   $answer = 'yes'; 
+                       
         }
         else if ($random % 2 === 0 & $answer === 'no')  {
-            $result = 'yes'; 
-            $answer = 'no'; 
-            return  Engine\engine($answer, $result,  $username);             
+          $result = 'yes'; 
+           $answer = 'no'; 
+           return  Engine\results($answer, $result, $username);             
            
         }
         else if ($random % 2 === 1 & $answer !== 'no')  {
-            $result = 'yes'; 
-            $answer = 'no'; 
-            return  Engine\engine($answer, $result,  $username);
+           $result = 'yes'; 
+           $answer = 'no'; 
+           return  Engine\results($answer, $result, $username); 
             
         }
         else if ($random % 2 === 0 & $answer !== 'yes')  {
-            $result = 'no';
+         $result = 'no';
             $answer = 'yes'; 
-            return  Engine\engine($answer, $result,  $username);
+            return  Engine\results($answer, $result, $username); 
            
         }
         else if  ($random % 2 === 0 & $answer === 'yes'){
             $result = 'yes';
             $answer = 'yes'; 
-            Engine\engine($answer, $result,  $username);
+            return  Engine\results($answer, $result, $username); 
         }
         else if ($random % 2 === 1 & $answer === 'no'){
-            $result = 'no';
-            $answer = 'no'; 
-            Engine\engine($answer, $result, $username);
-        }
-
-           
+           $result = 'no';
+           $answer = 'no'; 
+           return  Engine\results($answer, $result, $username); 
+        }    
     }
-    return line("Congratulations, " .  $username . "!");
-} 
+    
+
 
  
